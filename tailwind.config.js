@@ -17,6 +17,9 @@ module.exports = {
       spacing: {
         1206: "1206px", // Adding custom width size
       },
+      // fontFamily: {
+      //   lato: ["Lato", "sans-serif"], // Add Lato to the font family
+      // },
     },
   },
   plugins: [],
