@@ -7,9 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      // colors: {
+      //   background: "var(--background)",
+      //   foreground: "var(--foreground)",
+      // },
+      backgroundImage: {
+        hero: "url('/assets/HomePage/HeroSection/HeroImg.jpg')",
+      },
+      spacing: {
+        1206: "1206px", // Adding custom width size
       },
     },
   },
