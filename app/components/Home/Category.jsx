@@ -1,28 +1,6 @@
 import React from "react";
 import Image from "next/image";
-
-const categories = [
-  {
-    id: 1,
-    name: "Exterior Paints",
-    className: "/assets/HomePage/Category/Img2.jpg",
-  },
-  {
-    id: 2,
-    name: "Water Proofing",
-    className: "/assets/HomePage/Category/Img3.jpg",
-  },
-  {
-    id: 3,
-    name: "Undercoats",
-    className: "/assets/HomePage/Category/Img4.jpg",
-  },
-  {
-    id: 4,
-    name: "Painting Tools",
-    className: "/assets/HomePage/Category/Img5.jpg",
-  },
-];
+import { categories } from "@/app/utils/Data";
 
 const Category = () => {
   return (

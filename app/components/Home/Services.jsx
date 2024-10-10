@@ -1,26 +1,6 @@
 import React from "react";
 import Image from "next/image";
-
-const service = [
-  {
-    id: 1,
-    name: "Wall Painting",
-    desc: "Lorem ipsum dolor sit amet consectetur. ",
-    className: "/assets/HomePage/Service/Img1.jpg",
-  },
-  {
-    id: 2,
-    name: "Water Solution",
-    desc: "Lorem ipsum dolor sit amet consectetur. ",
-    className: "/assets/HomePage/Service/Img2.jpg",
-  },
-  {
-    id: 3,
-    name: "Painting",
-    desc: "Lorem ipsum dolor sit amet consectetur. ",
-    className: "/assets/HomePage/Service/Img3.jpg",
-  },
-];
+import { service } from "@/app/utils/Data";
 
 const Services = () => {
   return (

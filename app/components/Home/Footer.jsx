@@ -2,89 +2,12 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import {
-  FacebookSVG,
-  InstagramSVG,
-  LocationSVG,
-  MessageSVG,
-  PhoneSVG,
-  TwitterSVG,
-  YoutubeSVG,
-} from "@/public/assets/HomePage/Footer/svg/FooterSvg";
-
-const companies = [
-  {
-    id: 1,
-    image: "/assets/HomePage/Footer/Img1.png",
-  },
-  {
-    id: 2,
-    image: "/assets/HomePage/Footer/Img2.png",
-  },
-  {
-    id: 3,
-    image: "/assets/HomePage/Footer/Img3.png",
-  },
-  {
-    id: 4,
-    image: "/assets/HomePage/Footer/Img4.png",
-  },
-  {
-    id: 5,
-    image: "/assets/HomePage/Footer/Img5.png",
-  },
-];
-
-const reachDetails = [
-  {
-    svg: <LocationSVG />,
-    details:
-      "#417/418, 11th Cross, 4th Phase, Peenya Industrial Area, Bangalore - 560 058",
-  },
-  {
-    svg: <PhoneSVG />,
-    details: "+91 – 80 – 42552555",
-  },
-  {
-    svg: <MessageSVG />,
-    details: "info@gem-paints.com",
-  },
-];
-
-const footerItems = [
-  {
-    title: "About",
-    items: ["About Astrals", "Paint Journey", "Group Companies"],
-  },
-  {
-    title: "Category",
-    items: [
-      "Interior Paints",
-      "Exterior Paints",
-      "Undercoats",
-      "Painting Tools",
-      "Water Proofing",
-    ],
-  },
-
-  {
-    title: "Services",
-    items: ["Wall Painting", "Water Solution", "Painting", "Colour Shades"],
-  },
-];
-
-const additionalLinks = [
-  { href: "/downloads", text: "Downloads" },
-  { href: "/become-dealer", text: "Become A Dealer" },
-  { href: "/blogs", text: "Blogs" },
-  { href: "/contact", text: "Contact" },
-];
-
-const socialIcons = [
-  { Icon: 1, href: <FacebookSVG /> },
-  { Icon: 2, href: <InstagramSVG /> },
-  { Icon: 3, href: <YoutubeSVG /> },
-  { Icon: 4, href: <TwitterSVG /> },
-];
+  companies,
+  reachDetails,
+  footerItems,
+  additionalLinks,
+  socialIcons,
+} from "@/app/utils/Data";
 
 const Footer = () => {
   const [email, setEmail] = useState("");

@@ -1,38 +1,6 @@
 import React from "react";
 import Image from "next/image";
-
-const blogPosts = [
-  {
-    id: 1,
-    title: "How to choose the perfect wall colour for your office",
-    date: "10 Jan 2024",
-    image: "/assets/HomePage/Blog/Img1.jpg",
-  },
-  {
-    id: 2,
-    title: "10 stylish cream colour combination for your home",
-    date: "20 Jan 2024",
-    image: "/assets/HomePage/Blog/Img2.jpg",
-  },
-  {
-    id: 3,
-    title: "How to choose the perfect wall colour for your office",
-    date: "10 Jan 2024",
-    image: "/assets/HomePage/Blog/Img3.jpg",
-  },
-  {
-    id: 4,
-    title: "How to choose the perfect wall colour for your office",
-    date: "10 Jan 2024",
-    image: "/assets/HomePage/Blog/Img4.jpg",
-  },
-  {
-    id: 5,
-    title: "How to choose the perfect wall colour for your office",
-    date: "10 Jan 2024",
-    image: "/assets/HomePage/Blog/Img5.jpg",
-  },
-];
+import { blogPosts } from "@/app/utils/Data";
 
 const Blog = () => {
   return (
