@@ -3,7 +3,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { NavItems } from "@/app/utils/Data";
 
-const Button = dynamic(() => import("../ui/Button"), { ssr: false });
+const Button = dynamic(() => import("../ui/Button"));
 
 const Navbar = () => {
   return (
