@@ -30,9 +30,9 @@ const Footer = () => {
           Group Company
         </h2>
         <div className="flex flex-wrap justify-center items-center gap-x-[55px] mb-[51px]">
-          {companies.map((img) => (
+          {companies.map((img, index) => (
             <Image
-              key={img.id}
+              key={index}
               src={img.image}
               alt={`Logo of ${img.name}`}
               width={160}
