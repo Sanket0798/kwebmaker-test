@@ -1,6 +1,18 @@
 import React from "react";
 import Image from "next/image";
 import { service } from "@/app/utils/Data";
+import { Lato } from "next/font/google";
+import dynamic from "next/dynamic";
+
+const Button = dynamic(() => import("../ui/Button"), {
+  ssr: false,
+  loading: () => <button>Loading...</button>,
+});
+
+const lato = Lato({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
 
 const Services = () => {
   return (
@@ -14,7 +26,8 @@ const Services = () => {
               src="/assets/HomePage/Service/ServiceLine.jpg"
               width={178}
               height={9}
-              alt="Line"
+              alt="Decorative line"
+              loading="lazy"
             />
           </span>
         </h1>
@@ -26,18 +39,23 @@ const Services = () => {
             >
               <Image
                 src={value.className}
-                layout="fill"
-                objectFit="cover"
                 alt={value.name}
+                fill
+                style={{ objectFit: "cover" }}
+                loading="lazy"
               />
               <div className="bg-[#FFE710] flex flex-col py-[15px] px-[29px] w-full h-[143px] z-20">
                 <p className="font-semibold text-[20px] text-black">
                   {value.name}
                 </p>
-                <p className="text-[14px] text-black mt-[10px]">{value.desc}</p>
-                <button className="text-black font-semibold text-[12px] w-[109px] h-[38px] bg-white rounded-full transition transform hover:-translate-y-1 mt-[15px]">
-                  Read More
-                </button>
+                <p
+                  className={`${lato.className} text-[16px] text-black mt-[5px]`}
+                >
+                  {value.desc}
+                </p>
+                <Button className=" bg-white text-[12px] font-semibold text-black transition transform hover:-translate-y-1 mt-[15px]">
+                  Enquire Now
+                </Button>
               </div>
             </div>
           ))}
