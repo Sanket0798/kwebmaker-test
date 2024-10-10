@@ -15,7 +15,11 @@ const HeroSection = () => {
             Enquire Now
           </button>
         </div>
-        <p>hello world</p>
+        <div className="flex flex-col items-center space-y-2">
+          <div className="w-1 h-[21px] rounded-full bg-white opacity-15"></div>
+          <div className="w-1 h-[21px] rounded-full bg-white"></div>
+          <div className="w-1 h-[21px] rounded-full bg-white opacity-15"></div>
+        </div>
       </div>
     </div>
   );

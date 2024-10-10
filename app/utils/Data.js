@@ -170,3 +170,12 @@ export const socialIcons = [
   { Icon: 3, href: <YoutubeSVG /> },
   { Icon: 4, href: <TwitterSVG /> },
 ];
+
+export const colors = [
+  { name: "Pale Yellow", code: "#F3E2A9" },
+  { name: "Light Pink", code: "#F8C8DC" },
+  { name: "Sky Blue", code: "#42C8F5" },
+  { name: "Deep Blue", code: "#0A6FB8" },
+  { name: "Deep Red", code: "#880000" },
+  { name: "Mustard", code: "#D9A404" },
+];
