@@ -1,15 +1,18 @@
 import Image from "next/image";
 import React from "react";
+import dynamic from "next/dynamic";
+
+const Button = dynamic(() => import("../ui/Button"), { ssr: false });
 
 const NavItems = [
-  "About",
-  "Category",
-  "Services",
-  "Colours",
-  "Downloads",
-  "Become a Dealer",
-  "Blogs",
-  "Contact",
+  { name: "About", href: "#about" },
+  { name: "Category", href: "#category" },
+  { name: "Services", href: "#services" },
+  { name: "Colours", href: "#colours" },
+  { name: "Downloads", href: "#downloads" },
+  { name: "Become a Dealer", href: "#dealer" },
+  { name: "Blogs", href: "#blogs" },
+  { name: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -20,22 +23,25 @@ const Navbar = () => {
           src="/assets/HomePage/Navbar/Log.png"
           width={150}
           height={48}
-          alt="Picture of the author"
+          alt="Logo"
+          priority
         />
         <div className="flex items-center justify-center">
           <ul className="flex space-x-8 text-white mr-[35px]">
-            {NavItems.map((value, index) => (
-              <li
-                key={index}
-                className="font-semibold text-[14px] transition transform hover:-translate-y-1 cursor-pointer"
-              >
-                {value}
+            {NavItems.map((item, index) => (
+              <li key={index}>
+                <a
+                  href={item.href}
+                  className="font-semibold text-[14px] transition-transform hover:-translate-y-1 cursor-pointer"
+                >
+                  {item.name}
+                </a>
               </li>
             ))}
           </ul>
-          <button className="bg-white text-[#0060AF] w-[109px] h-[38px] rounded-full font-semibold text-[14px] transition transform hover:-translate-y-1">
+          <Button className="bg-white text-[#0060AF] text-[12px] font-semibold transition transform hover:-translate-y-1">
             Enquire Now
-          </button>
+          </Button>
         </div>
       </div>
     </nav>
