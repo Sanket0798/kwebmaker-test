@@ -19,6 +19,7 @@ module.exports = {
         Category4: "url('/assets/HomePage/Category/Img4.jpg')",
         Category5: "url('/assets/HomePage/Category/Img5.jpg')",
         DealerBanner: "url('/assets/HomePage/DealerSection/DealerBanner.jpg')",
+        FooterBanner: "url('/assets/HomePage/Footer/FooterBanner.jpg')",
       },
       spacing: {
         1206: "1206px", // Adding custom width size
