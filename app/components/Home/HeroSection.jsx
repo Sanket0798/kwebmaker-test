@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../ui/Button";
 
 const HeroSection = () => {
   return (
@@ -11,9 +12,12 @@ const HeroSection = () => {
           <p className="text-base text-white mt-4 mb-[23px] font-lato">
             Excellent fungal resistance | smooth finish
           </p>
-          <button className="bg-white text-[#0060AF] w-[109px] h-[38px] rounded-full font-semibold text-[14px] transition transform hover:-translate-y-1">
-            Enquire Now
-          </button>
+          {/* <button className="bg-white text-[#0060AF] w-[109px] h-[38px] rounded-full font-semibold text-[14px] transition transform hover:-translate-y-1">
+            Read More
+          </button> */}
+          <Button className="bg-white text-[#0060AF] font-semibold text-[12px] transition transform hover:-translate-y-1">
+            Read More
+          </Button>
         </div>
         <div className="flex flex-col items-center space-y-2">
           <div className="w-1 h-[21px] rounded-full bg-white opacity-15"></div>
