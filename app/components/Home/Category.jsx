@@ -1,6 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import { categories } from "@/app/utils/Data";
+import dynamic from "next/dynamic";
+
+const Button = dynamic(() => import("../ui/Button"), {
+  ssr: false,
+  loading: () => <button>Loading...</button>,
+});
 
 const Category = () => {
   return (
@@ -14,7 +20,8 @@ const Category = () => {
               src="/assets/HomePage/Category/line.jpg"
               width={178}
               height={9}
-              alt="Line"
+              alt="Decorative line"
+              loading="lazy"
             />
           </span>
         </h1>
@@ -24,9 +31,9 @@ const Category = () => {
               <p className="font-semibold text-[20px] text-white">
                 Interior Paints
               </p>
-              <button className="text-[#FF9119] w-[109px] h-[38px] bg-white rounded-full transition transform hover:-translate-y-1">
+              <Button className="bg-white text-[#FF9119] text-[12px] font-semibold">
                 Read More
-              </button>
+              </Button>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-6">
@@ -34,8 +41,8 @@ const Category = () => {
               <div key={index} className="relative w-[264px] h-[248px]">
                 <Image
                   src={value.className}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  style={{ objectFit: "cover" }}
                   alt={value.name}
                 />
                 <div className="absolute bottom-0 left-0 font-semibold text-[20px] text-white p-4">
