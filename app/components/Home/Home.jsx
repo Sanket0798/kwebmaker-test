@@ -8,7 +8,6 @@ import Colours from "./Colours";
 import DealerSection from "./DealerSection";
 import Blog from "./Blog";
 import Footer from "./Footer";
-import { RainbowSVG } from "@/public/assets/HomePage/About/svg/Rainbow";
 
 const Home = () => {
   return (
