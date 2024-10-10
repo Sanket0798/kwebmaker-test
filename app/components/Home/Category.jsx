@@ -10,8 +10,10 @@ const Button = dynamic(() => import("../ui/Button"), {
 
 const Category = () => {
   return (
-    <section className="w-1206 mx-auto h-[710px]">
-      <div className="container mx-auto flex flex-col h-full">
+    <section className="relative w-full h-[710px]">
+      <div className="absolute left-0 top-0 h-full w-[15px] bg-gradient-to-b from-[#E70000] to-[#FF9119]"></div>
+
+      <div className="w-1206 mx-auto flex flex-col h-full">
         <h2 className="font-medium text-[18px]">Category</h2>
         <h1 className="font-bold text-[30px] flex items-center gap-x-[14px] mt-[23px]">
           Wide range of Colours{" "}

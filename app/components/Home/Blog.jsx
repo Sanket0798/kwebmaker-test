@@ -16,8 +16,10 @@ const lato = Lato({
 
 const Blog = () => {
   return (
-    <section className="w-1206 mx-auto h-[712px] flex flex-row items-start justify-between">
-      <div className="container mx-auto flex flex-col h-full">
+    <section className="relative w-full h-[712px] flex flex-row items-start justify-between">
+      <div className="absolute left-0 top-0 h-full w-[15px] bg-gradient-to-b from-[#00AE44] to-[#00C1DE]"></div>
+
+      <div className="w-1206 mx-auto flex flex-col h-full">
         <h2 className="font-medium text-[18px] mt-[85px]">Our Blog</h2>
         <h1 className="font-bold text-[30px] flex items-center gap-x-[14px] mt-[23px]">
           Latest{" "}
