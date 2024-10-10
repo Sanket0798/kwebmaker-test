@@ -9,7 +9,7 @@ const Button = dynamic(() => import("../ui/Button"), {
 });
 
 const lato = Lato({
-  weight: ["400", "700"], // Use the required weights
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
