@@ -6,8 +6,14 @@ import {
   reachDetails,
   footerItems,
   additionalLinks,
-  socialIcons,
 } from "@/app/utils/Data";
+import {
+  FacebookSVG,
+  InstagramSVG,
+  TwitterSVG,
+  YoutubeSVG,
+} from "@/public/assets/HomePage/Footer/svg/FooterSvg";
+import Button from "../ui/Button";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -24,13 +30,14 @@ const Footer = () => {
           Group Company
         </h2>
         <div className="flex flex-wrap justify-center items-center gap-x-[55px] mb-[51px]">
-          {companies.map((img, index) => (
+          {companies.map((img) => (
             <Image
-              key={index}
+              key={img.id}
               src={img.image}
-              alt={companies}
+              alt={`Logo of ${img.name}`}
               width={160}
               height={64}
+              priority
             />
           ))}
         </div>
@@ -63,12 +70,12 @@ const Footer = () => {
                   className="flex-grow bg-transparent py-[18px] px-[20px] font-medium text-[12px] text-white placeholder-gray-300 focus:outline-none"
                   required
                 />
-                <button
+                <Button
                   type="submit"
-                  className="bg-[#0060AF] text-[#EEDBB1] w-[109px] h-[47px] rounded-full font-semibold text-[12px]"
+                  className="bg-[#0060AF] text-[#EEDBB1] h-[47px] font-semibold text-[12px]"
                 >
                   Enquire Now
-                </button>
+                </Button>
               </div>
             </form>
           </div>
@@ -105,7 +112,7 @@ const Footer = () => {
                     {item.items?.map((listItem, idx) => (
                       <li
                         key={idx}
-                        className="list-none text-[12px] font-medium"
+                        className="list-none text-[12px] font-medium my-[16px]"
                       >
                         {listItem}
                       </li>
@@ -116,10 +123,20 @@ const Footer = () => {
             ))}
             <div className="flex flex-col">
               {additionalLinks.map((link, index) => (
-                <div key={index} href={link.href}>
+                <div
+                  key={index}
+                  href={link.href}
+                  className="text-[#EEDCB2] font-bold text-[14px] my-[6px]"
+                >
                   {link.text}
                 </div>
               ))}
+              <div className="flex flex-row gap-x-[30px] mt-[30px] items-center">
+                <FacebookSVG />
+                <InstagramSVG />
+                <YoutubeSVG />
+                <TwitterSVG />
+              </div>
             </div>
           </div>
         </div>
