@@ -87,39 +87,35 @@ const Footer = () => {
               Reach Us
             </h4>
             {reachDetails.map((item, index) => (
-              <>
-                <div
-                  key={index}
-                  className="flex flex-row items-center gap-x-[10px] mb-[15px]"
-                >
-                  {item.svg}
-                  <p className="text-[12px] leading-[20px] flex items-center w-[337px] h-[40px]">
-                    {item.details}
-                  </p>
-                </div>
-              </>
+              <div
+                key={index}
+                className="flex flex-row items-center gap-x-[10px] mb-[15px]"
+              >
+                {item.svg}
+                <p className="text-[12px] leading-[20px] flex items-center w-[337px] h-[40px]">
+                  {item.details}
+                </p>
+              </div>
             ))}
           </div>
 
           <div className="flex flex-row gap-x-[82px]">
             {footerItems.map((item, index) => (
-              <>
-                <div key={index} className="flex flex-col">
-                  <h3 className="font-bold text-[14px] text-[#EEDCB2]">
-                    {item.title}
-                  </h3>
-                  <ul className="">
-                    {item.items?.map((listItem, idx) => (
-                      <li
-                        key={idx}
-                        className="list-none text-[12px] font-medium my-[16px]"
-                      >
-                        {listItem}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </>
+              <div key={index} className="flex flex-col">
+                <h3 className="font-bold text-[14px] text-[#EEDCB2]">
+                  {item.title}
+                </h3>
+                <ul>
+                  {item.items?.map((listItem, idx) => (
+                    <li
+                      key={`${index}-${idx}`}
+                      className="list-none text-[12px] font-medium my-[16px]"
+                    >
+                      {listItem}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
             <div className="flex flex-col">
               {additionalLinks.map((link, index) => (
