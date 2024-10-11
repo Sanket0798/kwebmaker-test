@@ -13,6 +13,10 @@ import Blog from "./Blog";
 import Footer from "./Footer";
 
 export default function Home({ homepageData, colours, blogs }) {
+  if (!homepageData) {
+    return <div>Loading...</div>; // Or any other loading indicator
+  }
+
   return (
     <div>
       <div className="sticky top-0 z-50">
@@ -22,7 +26,7 @@ export default function Home({ homepageData, colours, blogs }) {
       <About
         title={homepageData.homeAboutTitle}
         subtitle={homepageData.homeAboutSubtitle}
-        videoImage={homepageData.homeAboutVideoImage.node.sourceUrl}
+        videoImage={homepageData.homeAboutVideoImage?.node?.sourceUrl}
         description={homepageData.homeAboutDescription}
         button={homepageData.homeAboutButton}
       />
@@ -33,7 +37,7 @@ export default function Home({ homepageData, colours, blogs }) {
         joinTitle={homepageData.homeJoinTitle}
         joinSubtitle={homepageData.homeJoinSubtitle}
         joinButton={homepageData.homeJoinButton}
-        joinBackground={homepageData.homeJoinBackgroundImage.node.sourceUrl}
+        joinBackground={homepageData.homeJoinBackgroundImage?.node?.sourceUrl}
       />
       <Blog blogs={blogs} />
       <Footer />
@@ -41,90 +45,4 @@ export default function Home({ homepageData, colours, blogs }) {
   );
 }
 
-export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      {
-        pages(where: { name: "Homepage" }) {
-          nodes {
-            homepage {
-              banners {
-                bannerImage {
-                  node {
-                    sourceUrl
-                  }
-                }
-                bannersTitle
-                bannerDescription
-                bannerButton {
-                  title
-                  url
-                  target
-                }
-              }
-              homeAboutTitle
-              homeAboutSubtitle
-              homeAboutButton {
-                title
-                url
-                target
-              }
-              homeAboutVideoImage {
-                node {
-                  sourceUrl
-                }
-              }
-              homeAboutDescription
-              categories {
-                title
-                image {
-                  node {
-                    sourceUrl
-                  }
-                }
-              }
-              services {
-                title
-                description
-              }
-              homeJoinTitle
-              homeJoinSubtitle
-              homeJoinButton {
-                title
-                url
-                target
-              }
-              homeJoinBackgroundImage {
-                node {
-                  sourceUrl
-                }
-              }
-            }
-          }
-        }
-        blogs {
-          nodes {
-            slug
-            title
-            date
-            featuredImage {
-              node {
-                sourceUrl
-              }
-            }
-          }
-        }
-      }
-    `,
-  });
 
-  const homepageData = data.pages.nodes[0].homepage;
-  const blogs = data.blogs.nodes;
-
-  return {
-    props: {
-      homepageData,
-      blogs,
-    },
-  };
-}

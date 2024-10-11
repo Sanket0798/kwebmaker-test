@@ -1,3 +1,4 @@
+"use client"
 import { Poppins, Lato } from "next/font/google";
 import "./styles/globals.css";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
@@ -14,10 +15,6 @@ const lato = Lato({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "kwebmakers",
-  description: "Project by Sanket Rathod",
-};
 
 export default function RootLayout({ children }) {
   return (
