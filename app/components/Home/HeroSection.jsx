@@ -4,7 +4,7 @@ import Button from "../ui/Button";
 import Image from "next/image";
 
 const HeroSection = ({ banners }) => {
-  console.log(banners);
+  // console.log(banners);
   if (!banners) {
     return <div>Loading...</div>;
   }
