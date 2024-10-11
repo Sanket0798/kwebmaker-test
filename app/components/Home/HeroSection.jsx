@@ -44,9 +44,8 @@ const HeroSection = ({ banners }) => {
       ))}
       <Image
         src="/assets/HomePage/HeroSection/rainbow.png"
-        alt="Logo"
-        layout="responsive"
-        width={100}
+        alt="Rainbow"
+        width={1920}
         height={428}
         className="w-full h-[428px] object-cover absolute top-[600px] z-10"
       />
