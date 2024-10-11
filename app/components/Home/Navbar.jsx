@@ -20,10 +20,10 @@ const Navbar = () => {
         <div className="flex items-center justify-center">
           <ul className="flex space-x-8 text-white mr-[35px]">
             {NavItems.map((item, index) => (
-              <li key={index}>
+              <li key={index} className="transition-transform hover:-translate-y-1">
                 <a
                   href={item.href}
-                  className="font-semibold text-[14px] transition-transform hover:-translate-y-1 cursor-pointer"
+                  className="font-semibold text-[14px] cursor-pointer"
                 >
                   {item.name}
                 </a>
